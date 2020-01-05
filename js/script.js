@@ -16,13 +16,6 @@
 	const synthese = document.querySelector('#synthese');
 	let open = true;
 
-	sliders && setInterval(() => {
-		const index = ~~(Math.random() * 3);
-		const el = sliders.querySelectorAll('span')[index];
-		console.log(el);
-		sliders.dispatchEvent(new Event("pointerup", {"detail": el.dataset.order}));
-	}, 3000);
-
 	dossiers.forEach(e => e.addEventListener('pointerup', e => {
 		let target = event.target;
         while (!target.getAttribute("ref")) {
