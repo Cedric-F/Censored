@@ -1,5 +1,4 @@
 (() => {
-
 	let order = [0, 1, 2];
 
 	const logo = document.querySelector('#logo');
@@ -28,7 +27,7 @@
 		window.location.href="index.html";
 	})
 
-	burger.addEventListener('pointerup', (e) => {
+	burger.addEventListener('pointerdown', (e) => {
 		open = !open;
 		burger.setAttribute('class', `burger ${open ? '' : 'close' }`);
 

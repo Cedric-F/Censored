@@ -6,6 +6,7 @@
 	<meta name="description" content="Site web du projet tutoré sur le thème de la liberté d'expression sur internet.">
 	<link rel="stylesheet" href="normalize.css">
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 	<title>Titre de la page</title>
 </head>
 <body>
@@ -20,18 +21,28 @@
 			<div></div>
 		</div>
 		<nav>
-			<a href="index.html" class="active">Accueil</a>
+			<a href="index.html">Accueil</a>
 			<a href="dossiers.html">Dossiers</a>
-			<a href="archives.html">Archives</a>
+			<a href="archives.html" class="active">Archives</a>
 			<a href="contact.html">Contact</a>
 		</nav>
 	</header>
 	<main>
-
+		<section id="sources">
+			<div class="top">
+				<h1>Filtrez les sources par mots clés</h1>
+				<label>
+					<input type="text" placeholder="internet, liberté, ..." /><i class="fas fa-search"></i>
+				</label>
+			</div>
+			<div class="sources__liste">
+			</div>
+		</section>
 	</main>
 	<footer>
 		<p>Copyright - Tous droits réservés</p>
 	</footer>
+	<script src="js/articles.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

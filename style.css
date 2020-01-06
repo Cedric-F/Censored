@@ -318,6 +318,151 @@ section {
 	text-align: center;
 }
 
+/* ----------------- Archives ----------------- */
+
+#sources .top {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+}
+
+.top h1 {
+	font-size: 24px;
+	font-weight: 400;
+}
+
+.top label {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.top input {
+	padding: 5px;
+	width: 280px;
+	color: inherit;
+}
+
+.fa-search {
+	position: absolute;
+	right: 0;
+	height: 24px;
+	width: 24px;
+	display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.sources__liste {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	box-sizing: content-box;
+	margin: 0 auto;
+}
+
+.sources__liste .article {
+	box-shadow: 3px 3px 3px #0008;
+	width: 250px;
+	min-height: 150px;
+	margin: 10px;
+	padding: 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+	box-sizing: border-box;
+	background: #f0f0f0;
+}
+
+.sources__liste .article:nth-of-type(even) {
+	background: #e8e8e8;
+}
+
+.sources__liste .article:last-of-type {
+	align-self: flex-start;
+}
+
+.sources__liste .article span {
+	display: block;
+}
+
+/* ----------------- Responsive ----------------- */
+
+#wrap {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+form input{
+    margin-bottom: 20px;
+}
+
+form input[type="text"],
+input[type="email"] {
+    border: none;
+    border-bottom: solid 1px #01647D;
+    padding: 5px 0;
+    display: block;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder {
+    opacity: 0.75;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+textarea {
+    margin-top: 10px;
+}
+
+.auteur__avatar {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.auteur__avatar img{
+    width: 100%;
+    height: auto;
+}
+
+.auteur__info span {
+    display: block;
+}
+
+.auteur {
+    display: flex;
+    margin: 20px 0;
+    max-width: 300px;
+    align-items: center;
+}
+
 /* ----------------- Responsive ----------------- */
 
 @media (min-width: 1366px) {
@@ -444,5 +589,9 @@ section {
 		grid-template-areas: "a"
 							 "b"
 							 "c";
+	}
+
+	.sources__liste .article {
+		width: 100%;
 	}
 }
