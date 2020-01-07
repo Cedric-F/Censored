@@ -6,7 +6,8 @@
 	<meta name="description" content="Site web du projet tutoré sur le thème de la liberté d'expression sur internet.">
 	<link rel="stylesheet" href="normalize.css">
 	<link rel="stylesheet" href="style.css">
-	<title>Titre de la page</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+	<title>Contact</title>
 </head>
 <body>
 	<header>
@@ -20,19 +21,21 @@
 			<div></div>
 		</div>
 		<nav>
-			<a href="index.html" class="active">Accueil</a>
+			<a href="index.html">Accueil</a>
 			<a href="dossiers.html">Dossiers</a>
 			<a href="archives.html">Archives</a>
-			<a href="contact.html">Contact</a>
+			<a href="contact.html" class="active">Contact</a>
 		</nav>
 	</header>
 	<main>
+		<h1 id="qa">
+			Des questions ? Des suggestions ?
+		</h1>
 		<div id="wrap">
 			<section id="message">
-				<h1>
-					Des questions ? Des suggestions ? <br>
+				<h2>
 					Envoyez-nous un message !
-				</h1>
+				</h2>
 				<form>
 						<label>Courriel</label>
 						<input type="email" name="email" placeholder="johndoe@contoso.com">
@@ -41,50 +44,55 @@
 						<input type="text" name="Nom" placeholder="John Doe">
 
 						<label>Message</label>
-						<textarea rows="8"></textarea>
+						<textarea rows="8" cols="35" maxlength="750" id="text"></textarea>
+						<span id="size">0/750</span>
 
+						<input type="submit" value="Envoyer" id="submit" />
 				</form>
 			</section>
-			<section>
-				<h1>Ou contactez l'un des auteurs</h1>
-				<div class="auteur">
-					<div class="auteur__avatar"><img src="img/avatar-cedric.png" alt=""></div>
-					<div class="auteur__info">
-						<span class="auteur__nom">Cedric Fontaine</span>
-						<span>+336</span>
-						<span>cfontaine@iut.univ-paris8.fr</span>
+			<section id="auteurs">
+				<h2>Ou contactez l'un des auteurs</h2>
+				<div>
+
+					<div class="auteur">
+						<div class="auteur__avatar"><img src="img/avatar-cedric.png" alt=""></div>
+						<div class="auteur__info">
+							<span class="auteur__nom">Cedric Fontaine</span>
+							<span>+336</span>
+							<span>cfontaine@iut.univ-paris8.fr</span>
+						</div>
 					</div>
-				</div>
-				<div class="auteur">
-					<div class="auteur__avatar"><img src="img/avatar.png" alt=""></div>
-					<div class="auteur__info">
-						<span class="auteur__nom">Rashmi Bhvasar</span>
-						<span>+336</span>
-						<span>rbhvasar@iut.univ-paris8.fr</span>
+					<div class="auteur">
+						<div class="auteur__avatar"><img src="img/avatar.png" alt=""></div>
+						<div class="auteur__info">
+							<span class="auteur__nom">Rashmi Bhavsar</span>
+							<span>+336</span>
+							<span>rbhavsar@iut.univ-paris8.fr</span>
+						</div>
 					</div>
-				</div>
-				<div class="auteur">
-					<div class="auteur__avatar"><img src="img/avatar.png" alt=""></div>
-					<div class="auteur__info">
-						<span class="auteur__nom">Byzid Khan</span>
-						<span>+336</span>
-						<span>bkhan@iut.univ-paris8.fr</span>
+					<div class="auteur">
+						<div class="auteur__avatar"><img src="img/avatar.png" alt=""></div>
+						<div class="auteur__info">
+							<span class="auteur__nom">Byzid Khan</span>
+							<span>+336</span>
+							<span>bkhan@iut.univ-paris8.fr</span>
+						</div>
 					</div>
-				</div>
-				<div class="auteur">
-					<div class="auteur__avatar"><img src="img/avatar.png" alt=""></div>
-					<div class="auteur__info">
-						<span class="auteur__nom">Brahim Ben El Hadj</span>
-						<span>+336</span>
-						<span>bbenelhadj@iut.univ-paris8.fr</span>
+					<div class="auteur">
+						<div class="auteur__avatar"><img src="img/avatar.png" alt=""></div>
+						<div class="auteur__info">
+							<span class="auteur__nom">Brahim Ben El Hadj</span>
+							<span>+336</span>
+							<span>bbenelhadj@iut.univ-paris8.fr</span>
+						</div>
 					</div>
-				</div>
-				<div class="auteur">
-					<div class="auteur__avatar"><img src="img/avatar.png" alt=""></div>
-					<div class="auteur__info">
-						<span class="auteur__nom">Haris Amarouche</span>
-						<span>+336</span>
-						<span>hamarouche@iut.univ-paris8.fr</span>
+					<div class="auteur">
+						<div class="auteur__avatar"><img src="img/avatar.png" alt=""></div>
+						<div class="auteur__info">
+							<span class="auteur__nom">Haris Amarouche</span>
+							<span>+336</span>
+							<span>hamarouche@iut.univ-paris8.fr</span>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -93,6 +101,6 @@
 	<footer>
 		<p>Copyright - Tous droits réservés</p>
 	</footer>
-	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/script.min.js"></script>
 </body>
 </html>

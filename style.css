@@ -3,6 +3,35 @@
 html {
 	background: #e4e4e4;
 	height: 100%;
+	scroll-behavior: smooth;
+}
+
+.tip {
+	cursor: pointer;
+	z-index: 10;
+	width: 30px;
+	height: 30px;
+	font-size: 30px;
+	display: none;
+}
+
+.stick {
+	/* position: -webkit-sticky; */
+	position: fixed;
+	bottom: 20px;
+	display: block;
+}
+
+.tip i {
+	color: #01647d;
+	background: white;
+	border-radius: 50%;
+}
+
+.bottom {
+	position: absolute;
+	bottom: 10px;
+	display: block;
 }
 
 body {
@@ -67,6 +96,41 @@ main {
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
+	position: relative;
+}
+
+.modal {
+	display: flex;
+	position: absolute;
+	background: #0008;
+	z-index: 999;
+	justify-content: center;
+	align-items: center;
+	color: #01647d;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.modal div {
+	position: relative;
+	background: white;
+	padding: 50px;
+}
+
+.modal div i {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.modal div i:hover {
+	cursor: pointer;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: red;
 }
 
 /* ----------------- Accueil ----------------- */
@@ -79,6 +143,7 @@ main {
 	width: 100%;
 	padding: 20px;
 	box-sizing: border-box;
+	transition: 0.4s;
 }
 
 .landing-page__figure {
@@ -108,6 +173,7 @@ main {
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
+	text-align: center;
 }
 
 .landing-page__problematique h1 {
@@ -232,42 +298,9 @@ span.pb {
 	box-sizing: border-box;
 	width: 100%;
 	max-width: 1024px;
+	transition: 0.4s;
+	position: relative;
 }
-
-/* #synthese:after {
-	content: '↑';
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	font-size: 24px;
-	z-index: 4;
-	position: fixed;
-	bottom: 70px;
-	right: 70px;
-	background: #01647d;
-	color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-}
-
-#synthese:before {
-    position: fixed;
-    bottom: 120px;
-	right: 50px;
-	z-index: 5;
-	width: 30px;
-	height: 10px;
-    content: attr(data-help);
-    border: 1px solid black;
-    background: #e4e4e4;
-    opacity: 0;
-    transition: opacity 0.2s;
-}
-#synthese:hover:before {
-    opacity: 1;
-} */
 
 #synthese a {
 	color: grey;
@@ -319,6 +352,10 @@ section {
 }
 
 /* ----------------- Archives ----------------- */
+
+#sources {
+	transition: 0.4s;
+}
 
 #sources .top {
 	display: flex;
@@ -393,15 +430,33 @@ section {
 	display: block;
 }
 
-/* ----------------- Responsive ----------------- */
+/* ----------------- Contact ----------------- */
+
+#qa {
+	font-size: 24px !important;
+	text-align: center;
+}
 
 #wrap {
+	transition: 0.4s;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
+}
 
+#wrap section {
+	height: 100%;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+#message {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
 }
 
 form {
@@ -412,7 +467,7 @@ form {
 }
 
 form input{
-    margin-bottom: 20px;
+    margin: 10px 0 20px;
 }
 
 form input[type="text"],
@@ -425,12 +480,16 @@ input[type="email"] {
 
 input[type="text"]::placeholder,
 input[type="email"]::placeholder {
-    opacity: 0.75;
+    opacity: 0.6;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus {
     outline: none;
+}
+
+textarea:invalid {
+	outline: none;
 }
 
 textarea:focus {
@@ -439,6 +498,50 @@ textarea:focus {
 
 textarea {
     margin-top: 10px;
+    max-width: 300px;
+    resize: vertical;
+    width: 100%;
+}
+
+#size {
+	display: block;
+	text-align: right;
+	font-size: 14px;
+	color: red;
+	opacity: 0.8;
+}
+
+#size.valid {
+	color: green;
+}
+
+#submit {
+	width: 100px;
+	height: 48px;
+	background: #01647d;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 20px auto 0;
+}
+
+#submit:hover {
+	background: green;
+}
+
+#auteurs {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+}
+
+.auteur {
+    display: flex;
+    margin: 20px 0;
+    max-width: 300px;
+    align-items: center;
 }
 
 .auteur__avatar {
@@ -454,13 +557,6 @@ textarea {
 
 .auteur__info span {
     display: block;
-}
-
-.auteur {
-    display: flex;
-    margin: 20px 0;
-    max-width: 300px;
-    align-items: center;
 }
 
 /* ----------------- Responsive ----------------- */
@@ -564,6 +660,7 @@ textarea {
 	.show {
 		display: flex;
 		position: absolute;
+		z-index: 11;
 		bottom: -48px;
 		justify-content: space-between;
 		left: 0;
@@ -593,5 +690,17 @@ textarea {
 
 	.sources__liste .article {
 		width: 100%;
+	}
+}
+
+@media (max-width: 360px) {
+	#landing-page {
+		padding: 5px;
+		margin: 0;
+		box-sizing: border-box;
+	}
+
+	.carousel__definition {
+		margin: 0;
 	}
 }
