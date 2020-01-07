@@ -355,6 +355,7 @@ section {
 
 #sources {
 	transition: 0.4s;
+	height: 100%;
 }
 
 #sources .top {
@@ -363,6 +364,7 @@ section {
 	align-items: center;
 	flex-wrap: wrap;
 	margin-bottom: 20px;
+	min-width: 100%;
 }
 
 .top h1 {
@@ -394,18 +396,15 @@ section {
 }
 
 .sources__liste {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 	box-sizing: content-box;
 	margin: 0 auto;
 }
 
 .sources__liste .article {
 	box-shadow: 3px 3px 3px #0008;
-	width: 250px;
+	max-width: 250px;
 	min-height: 150px;
 	margin: 10px;
 	padding: 25px;
@@ -616,6 +615,10 @@ textarea {
 	.dossier {
 		margin: 10px 0;
 	}
+
+	.sources__liste {
+	    grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 @media (max-width: 600px) {
@@ -688,8 +691,12 @@ textarea {
 							 "c";
 	}
 
+	.sources__liste {
+	    grid-template-columns: 1fr;
+	}
+
 	.sources__liste .article {
-		width: 100%;
+		max-width: 100%;
 	}
 }
 
