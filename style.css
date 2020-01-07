@@ -77,6 +77,13 @@ a.active {
 
 #logo {
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+#titre {
+	text-transform: uppercase;
+	text-decoration: line-through;
 }
 
 footer {
@@ -101,7 +108,7 @@ main {
 
 .modal {
 	display: flex;
-	position: absolute;
+	position: fixed;
 	background: #0008;
 	z-index: 999;
 	justify-content: center;
@@ -300,6 +307,7 @@ span.pb {
 	max-width: 1024px;
 	transition: 0.4s;
 	position: relative;
+	margin-bottom: 20px;
 }
 
 #synthese a {
