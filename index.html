@@ -8,6 +8,31 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 	<title>Accueil</title>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			if (!localStorage.getItem("privacy")) {
+				const modal = document.createElement('div');
+				const cross = document.createElement('i');
+				const ok = document.createElement('div');
+				const close = () => {
+					modal.style.display = 'none';
+					localStorage.setItem("privacy", "ok");
+				}
+				cross.setAttribute('class', 'fas fa-times');
+				cross.addEventListener('pointerup', close);
+				ok.addEventListener('pointerup', close);
+				modal.appendChild(document.createElement('div'));
+				modal.firstChild.innerHTML = "<h1>Nous respectons votre vie privée.</h1><p>Ce site est totalement gratuit et sans pub, n'utilise pas de cookies (on les a tous mangés), et ne vous demandera aucune information que vous ne souhaitez pas nous communiquer.<br>(<a href='mentions-legales.html'>Voir mentions légales du site</a>)</p>";
+				modal.firstChild.appendChild(cross);
+				modal.firstChild.appendChild(ok);
+				ok.innerHTML = "OK!<i class=\"fas fa-check-circle\"></i>";
+				ok.setAttribute('id', 'ok');
+				modal.setAttribute('class', 'modal');
+
+				document.querySelector('body').appendChild(modal);
+			}
+		});
+	</script>
 </head>
 <body>
 	<header>
