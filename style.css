@@ -41,7 +41,7 @@ body {
 	min-width: 300px;
 	width: 75%;
 	margin: 0 auto;
-	background: white;
+	background: white !important;
 	display: grid;
 	grid-template-rows: 100px 1fr 100px;
 }
@@ -93,6 +93,22 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
+}
+
+#social {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	font-size: 30px;
+}
+
+#social a {
+	color: #01647d88;
+}
+
+#social a:hover {
+	color: inherit;
 }
 
 /* ----------------- Main section ----------------- */
@@ -279,13 +295,29 @@ main {
 	box-sizing: border-box;
 	display: flex;
 	align-items: flex-start;
-	justify-content: center;
+	/* justify-content: center; */
 	flex-direction: column;
 	margin: 30px;
 	padding: 20px;
 	box-sizing: border-box;
 	cursor: pointer;
 	text-shadow: 1px 1px white;
+	position: relative;
+}
+
+.dossier::after {
+    content: "Lire l'article ▶";
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    color: white;
+	font-style: italic;
+	font-size: 14px;
+	background: #0008;
+    left: 0;
+    text-align: right;
+    padding: 5px;
+    text-shadow: none;
 }
 
 .dossier:hover {
@@ -306,10 +338,9 @@ main {
 }
 
 span.pb {
-	margin-top: 20px;
 	display: block;
+	margin-top: 20px;
 }
-
 
 .dossier:nth-of-type(1) {grid-area: a;}
 .dossier:nth-of-type(2) {grid-area: b;}
