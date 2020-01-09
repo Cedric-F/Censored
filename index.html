@@ -15,12 +15,14 @@
 				const cross = document.createElement('i');
 				const ok = document.createElement('div');
 				const close = () => {
-					modal.style.display = 'none';
+					document.body.removeChild(modal);
 					localStorage.setItem("privacy", "ok");
-				}
+				};
 				cross.setAttribute('class', 'fas fa-times');
-				cross.addEventListener('pointerup', close);
-				ok.addEventListener('pointerup', close);
+
+				cross.addEventListener('click', close);
+				ok.addEventListener('click', close);
+
 				modal.appendChild(document.createElement('div'));
 				modal.firstChild.innerHTML = "<h1>Nous respectons votre vie privée.</h1><p>Ce site est totalement gratuit et sans pub, n'utilise pas de cookies (on les a tous mangés), et ne vous demandera aucune information que vous ne souhaitez pas nous communiquer.<br>(<a href='mentions-legales.html'>Voir mentions légales du site</a>)</p>";
 				modal.firstChild.appendChild(cross);
@@ -37,8 +39,8 @@
 <body>
 	<header>
 		<div id="logo">
-			<img src="img/logo.png" alt="Logo du site. Une balance symbolisant l'équilibre entre la censure et la liberé d'expression">
-			<span id="titre" tabindex="-1">Censored</span>
+			<img src="img/balance.svg" alt="Logo du site. Une balance symbolisant l'équilibre entre la censure et la liberé d'expression">
+			<span id="titre">Censored</span>
 		</div>
 		<div class="burger">
 			<div></div>
@@ -56,7 +58,7 @@
 
 		<section id="landing-page">
 			<figure class="landing-page__figure">
-				<img src="img/freedom.png" alt="L'image principale de la page d'accueil, 'Internet and freedmon'" />
+				<img src="img/freedom.png" alt="L'image principale de la page d'accueil. Un pygargue tient dans son bec une banderole signée 'Internet and freedom'." />
 			</figure>
 			<div class="landing-page__carousel">
 				<div class="carousel__slides">
@@ -97,6 +99,6 @@
 			<a href=""><i class="fab fa-twitter-square"></i></a>
 		</div>
 	</footer>
-	<script type="text/javascript" src="js/script.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

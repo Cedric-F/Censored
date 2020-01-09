@@ -55,7 +55,7 @@
 
 	const section = document.querySelector('main').firstElementChild;
 
-	dossiers.forEach(e => e.addEventListener('pointerup', e => {
+	dossiers.forEach(e => e.addEventListener('click', e => {
 		let target = event.target;
         while (!target.getAttribute("ref")) {
           target = target.parentElement;
@@ -63,11 +63,11 @@
           window.location.href = `${target.getAttribute('ref')}.html`;
 	}));
 
-	logo.addEventListener('pointerup', (e) => {
+	logo.addEventListener('click', (e) => {
 		window.location.href="index.html";
 	})
 
-	burger.addEventListener('pointerdown', (e) => {
+	burger.addEventListener('click', (e) => {
 		open = !open;
 		burger.setAttribute('class', `burger ${open ? '' : 'close' }`);
 
@@ -76,7 +76,7 @@
 		section && section.setAttribute('class', `${!open ? 'offset' : ''}`)
 	});
 
-	sliders && sliders.addEventListener('pointerup', (e) => {
+	sliders && sliders.addEventListener('click', (e) => {
 		console.log(e.detail);
 		if (!e.target.dataset.order) return false;
 		const next = e.target.dataset.order;
@@ -102,7 +102,7 @@
 		const cross = document.createElement('i');
 		const msg = document.createElement('p');
 		cross.setAttribute('class', 'fas fa-times');
-		cross.addEventListener('pointerup', (e) => {
+		cross.addEventListener('click', (e) => {
 			modal.style.display = 'none';
 		});
 		msg.innerText = "Merci !";

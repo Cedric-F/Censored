@@ -79,11 +79,21 @@ a.active {
 	cursor: pointer;
 	display: flex;
 	align-items: center;
+	position: relative;
 }
 
 #titre {
 	text-transform: uppercase;
-	text-decoration: line-through;
+    text-decoration: line-through;
+    position: absolute;
+    color: white;
+	font-weight: bolder;
+	font-size: 15px;
+	transform: rotate(-27deg);
+	left: -6px;
+	top: 22px;
+	border:	red solid 1px;
+	background:	red;
 }
 
 footer {
@@ -139,7 +149,7 @@ main {
 
 .modal {
 	display: flex;
-	position: absolute;
+	position: fixed;
 	background: #0008;
 	z-index: 999;
 	justify-content: center;
