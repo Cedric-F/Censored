@@ -762,6 +762,13 @@ textarea {
 	}
 }
 
+@media (max-width: 500px) {
+	#social {
+		right: unset;
+		bottom: 5px;
+	}
+}
+
 @media (max-width: 360px) {
 	#landing-page {
 		padding: 5px;
