@@ -8,7 +8,13 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 	<title>Accueil</title>
+	<!-- Script du modal Informatique et libertés -->
 	<script>
+		/**
+		 * Attend la fin du chargement du contenu du DOM.
+		 * Vérifie s'il s'agit de la première visite de l'utilisateur, et si oui, crée un pop up d'information sur l'usage des données privées.
+		 * Contient le lien de la page Mentions légales
+		 */
 		document.addEventListener('DOMContentLoaded', () => {
 			if (!localStorage.getItem("privacy")) {
 				const modal = document.createElement('div');
@@ -37,18 +43,24 @@
 	</script>
 </head>
 <body>
+	<!-- En-tete de la page -->
 	<header>
+		<!-- Logo -->
 		<div id="logo">
-			<img src="img/balance.svg" alt="Logo du site. Une balance symbolisant l'équilibre entre la censure et la liberé d'expression">
+			<img src="img/balance.svg" alt="">
 			<span id="titre">Censored</span>
 		</div>
+
+		<!-- Menu pour le mode mobile -->
 		<div class="burger">
 			<div></div>
 			<div></div>
 			<div></div>
 		</div>
+
+		<!-- Navigation -->
 		<nav>
-			<a href="accueil.html" class="active">Accueil</a>
+			<a href="index.html" class="active">Accueil</a>
 			<a href="dossiers.html">Dossiers</a>
 			<a href="archives.html">Archives</a>
 			<a href="contact.html">Contact</a>
@@ -60,10 +72,14 @@
 			<figure class="landing-page__figure">
 				<img src="img/freedom.png" alt="L'image principale de la page d'accueil. Un pygargue tient dans son bec une banderole signée 'Internet and freedom'." />
 			</figure>
+
+			<!-- Carousel des termes clés du thème principal -->
 			<div class="landing-page__carousel">
 				<div class="carousel__slides">
+					<!-- Liste de définitions -->
 					<dl class="carousel__liste">
 
+						<!-- N'affiche qu'une définition à la fois, avec la classe "hide" (display none) -->
 						<dt class="carousel__terme">Liberté d'expression</dt>
 						<dd class="carousel__definition"><q>Tout individu a droit à la liberté d'opinion et d'expression, ce qui implique le droit de ne pas être inquiété pour ses opinions et celui de chercher, de recevoir et de répandre, sans considérations de frontières, les informations et les idées par quelque moyen d'expression que ce soit.</q>
 						<span class="source">(ONU, 1948)</span></dd>
@@ -78,7 +94,10 @@
 
 					</dl>
 				</div>
+
+				<!-- Boutons du carousel permettant de changer de définition -->
 				<div class="carousel__btns">
+					<!-- order est utilisé pour le javascript -->
 					<span data-order="0" class="btn active"></span>
 					<span data-order="1" class="btn"></span>
 					<span data-order="2" class="btn"></span>

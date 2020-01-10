@@ -1,4 +1,8 @@
 (() => {
+	/*
+	 * Objet contenant les titres, liens, et mots clés des articles
+	 * Ces memes mots clés seront utilisés pour n'afficher que les articles correspondant aux termes de recherche des utilisateurs
+	 */
 	const liste = {
 		"1": {
 			"titre": "The Gutenberg Galaxy",
@@ -107,6 +111,7 @@
 		}
 	};
 
+	/* Pour chaque article, créer leur block dans le DOM, avec le contenu adéquat */
 	const sources = document.querySelector('.sources__liste');
 	const filter = document.querySelector('input');
 	filter.value = "";
@@ -127,6 +132,9 @@
 
 	const divs = document.querySelectorAll('.article');
 
+	/*
+	 * Lorsque l'utilisateur tape quelque chose dans la barre de filtrage, vérifie les articles correspondant aux termes saisis et masque les autres.
+	 */
 	filter.addEventListener('input', e => {
 		const input = e.target.value.toLowerCase().split(',').map(e => e.trim());
 		let regex = new RegExp(input.reduce((a, b) => a + `(${b})|`, ""), "ig");

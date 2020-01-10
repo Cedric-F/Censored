@@ -6,6 +6,9 @@ html {
 	scroll-behavior: smooth;
 }
 
+/*
+ * Flèche permettant de remonter en haut de la page de manière "smooth"
+ */
 .tip {
 	cursor: pointer;
 	z-index: 10;
@@ -15,8 +18,8 @@ html {
 	display: none;
 }
 
+/* Toujours visible en bas de page */
 .stick {
-	/* position: -webkit-sticky; */
 	position: fixed;
 	bottom: 20px;
 	display: block;
@@ -28,12 +31,14 @@ html {
 	border-radius: 50%;
 }
 
+/* Visible seulement en bas de page */
 .bottom {
 	position: absolute;
 	bottom: 10px;
 	display: block;
 }
 
+/* Paramètres globaux du corps de page */
 body {
 	font-family: 'Roboto', 'Segoe UI', 'sans-serif';
 	color: #01647d;
@@ -50,7 +55,7 @@ a {
 	color: #40a5bf;
 }
 
-
+/* En-tete */
 header {
 	box-sizing: content-box;
 	padding: 15px;
@@ -71,10 +76,12 @@ header a {
 	font-size: calc(10px + 1.2vmin);
 }
 
+/* Marqueur pour afficher dans le nav sur quelle page on se trouve */
 a.active {
 	text-decoration: underline;
 }
 
+/* Logo du site */
 #logo {
 	cursor: pointer;
 	display: flex;
@@ -82,6 +89,7 @@ a.active {
 	position: relative;
 }
 
+/* Texte présent dans le logo */
 #titre {
 	text-transform: uppercase;
     text-decoration: line-through;
@@ -96,6 +104,7 @@ a.active {
 	background:	red;
 }
 
+/* Pied de page */
 footer {
 	box-sizing: content-box;
 	padding: 15px;
@@ -106,6 +115,7 @@ footer {
 	position: relative;
 }
 
+/* Liens réseaux sociaux */
 #social {
 	position: absolute;
 	bottom: 20px;
@@ -132,6 +142,7 @@ main {
 	position: relative;
 }
 
+/* Bouton confirmation du modal informatique et liberté */
 #ok {
 	background: green;
 	color: white;
@@ -147,6 +158,7 @@ main {
 	bottom: 0;
 }
 
+/* Positionnement du modal en bas de page, en surcouche (z index) */
 .modal {
 	display: flex;
 	position: fixed;
@@ -175,6 +187,7 @@ main {
 	right: 0;
 }
 
+/* Croix pour fermer le modal */
 .modal div i {
 	position: absolute;
 	top: 10px;
@@ -191,10 +204,11 @@ main {
 
 /* ----------------- Accueil ----------------- */
 
+/* La page est agencée en grille.  */
 #landing-page {
 	display: grid;
-	grid-template-areas: "a b b"
-						 "c c c";
+	grid-template-areas: "image carousel carousel"
+						 "pb pb pb";
 	grid-auto-rows: 1fr 1fr;
 	width: 100%;
 	padding: 20px;
@@ -202,8 +216,9 @@ main {
 	transition: 0.4s;
 }
 
+/* Image principale */
 .landing-page__figure {
-	grid-area: a;
+	grid-area: image;
 	min-width: 300px;
 	max-width: 600px;
 	margin: 0;
@@ -217,24 +232,10 @@ main {
 	height: auto;
 }
 
+/* Carousel */
 .landing-page__carousel {
-	grid-area: b;
+	grid-area: carousel;
 	margin: 0 auto;
-}
-
-.landing-page__problematique {
-	width: 100%;
-	grid-area: c;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
-	text-align: center;
-}
-
-.landing-page__problematique h1 {
-	font-size: 18px;
-	text-align: center;
 }
 
 .carousel__terme {
@@ -244,7 +245,6 @@ main {
 }
 
 .carousel__definition {
-	/* text-align: justify; */
 	max-width: 300px;
 	margin-left: 20px;
 	transition: 0.4s;
@@ -254,10 +254,6 @@ main {
 	text-shadow: 1px 1px white;
 }
 
-.hide {
-	display: none;
-}
-
 .source {
 	display: block;
 	margin-top: 20px;
@@ -265,6 +261,7 @@ main {
 	font-style: italic;
 }
 
+/* Boutons carousel */
 .carousel__btns {
 	display: flex;
 	justify-content: center;
@@ -287,25 +284,49 @@ main {
 	background: #01647d;
 }
 
+/* Redirection vers la page des synthèses */
+.landing-page__problematique {
+	width: 100%;
+	grid-area: pb;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+}
+
+.landing-page__problematique h1 {
+	font-size: 18px;
+	text-align: center;
+}
+
+
+/* Class générique pour cacher un élément */
+.hide {
+	display: none;
+}
+
+
 /* ----------------- Dossiers ----------------- */
 
+/* Les synthèses sont agencées sous forme de grille */
 #dossiers {
 	display: grid;
-	grid-template-areas: "a b"
-						 "c d"
-						 "e e";
+	grid-template-areas: "cedric rashmi"
+						 "byzid brahim"
+						 "synthese synthese";
 	height: 100%;
 	width: 100%;
 	box-sizing: border-box;
 	transition: 0.4s;
 }
 
+/* Block de redirection vers les synthèses */
 .dossier {
 	background: #e4e4e4;
 	box-sizing: border-box;
 	display: flex;
 	align-items: flex-start;
-	/* justify-content: center; */
 	flex-direction: column;
 	margin: 30px;
 	padding: 20px;
@@ -315,6 +336,7 @@ main {
 	position: relative;
 }
 
+/* Indicateur signifiant que le block est cliquable */
 .dossier::after {
     content: "Lire l'article ▶";
     position: absolute;
@@ -352,18 +374,20 @@ span.pb {
 	margin-top: 20px;
 }
 
-.dossier:nth-of-type(1) {grid-area: a;}
-.dossier:nth-of-type(2) {grid-area: b;}
-.dossier:nth-of-type(3) {grid-area: c;}
-.dossier:nth-of-type(4) {grid-area: d;}
+/* Correspondance des syntheses dans la grille */
+.dossier:nth-of-type(1) {grid-area: cedric;}
+.dossier:nth-of-type(2) {grid-area: rashmi;}
+.dossier:nth-of-type(3) {grid-area: byzid;}
+.dossier:nth-of-type(4) {grid-area: brahim;}
 .dossier:nth-of-type(5) {
-	grid-area: e;
+	grid-area: synthese;
 	text-align: center;
 	align-items: unset;
 }
 
 /* ----------------- Synthèses ----------------- */
 
+/* Format commun à toutes les syntheses */
 #synthese {
 	padding: 20px;
 	box-sizing: border-box;
@@ -374,11 +398,13 @@ span.pb {
 	margin-bottom: 20px;
 }
 
+/* Liens de redirection */
 #synthese a {
 	color: grey;
 	font-style: italic;
 }
 
+/* Information sur l'article */
 .meta {
 	list-style: none;
 }
@@ -387,6 +413,7 @@ span.pb {
 	font-weight: bold;
 }
 
+/* Image de l'article */
 #synthese figure {
 	max-width: 100%;
 }
@@ -413,6 +440,7 @@ section {
 	padding:10px;
 }
 
+/* Bloc de redirection vers les sources */
 .source-article {
 	text-align: center;
 	font-size: 0.9em;
@@ -425,11 +453,13 @@ section {
 
 /* ----------------- Archives ----------------- */
 
+/* Page listant les sources utilisées dans les syntheses */
 #sources {
 	transition: 0.4s;
 	height: 100%;
 }
 
+/* Rangée du haut comprenant la barre de filtrage */
 #sources .top {
 	display: flex;
 	justify-content: space-around;
@@ -457,6 +487,7 @@ section {
 	color: inherit;
 }
 
+/* Logo "loupe" */
 .fa-search {
 	position: absolute;
 	right: 0;
@@ -503,11 +534,12 @@ section {
 
 /* ----------------- Contact ----------------- */
 
-#qa {
+#suggestions {
 	font-size: 24px !important;
 	text-align: center;
 }
 
+/* Layout en colonnes */
 #wrap {
 	transition: 0.4s;
     display: flex;
@@ -523,6 +555,7 @@ section {
 	box-sizing: border-box;
 }
 
+/* Section de gauche contenant le formulaire */
 #message {
 	display: flex;
 	justify-content: space-between;
@@ -537,6 +570,7 @@ form {
     margin: 0 auto;
 }
 
+/* Les inputs */
 form input{
     margin: 10px 0 20px;
 }
@@ -574,6 +608,7 @@ textarea {
     width: 100%;
 }
 
+/* Compteur de caractères */
 #size {
 	display: block;
 	text-align: right;
@@ -586,6 +621,7 @@ textarea {
 	color: green;
 }
 
+/* Bouton d'envoi du formulaire */
 #submit {
 	width: 100px;
 	height: 48px;
@@ -601,6 +637,7 @@ textarea {
 	background: green;
 }
 
+/* Colonne de droite, info contact des auteurs */
 #auteurs {
 	display: flex;
 	justify-content: space-between;
@@ -631,6 +668,10 @@ textarea {
 }
 
 /* ----------------- Responsive ----------------- */
+
+/*
+ * Diverses adaptations pour convenir aux formats mobiles et écrans moyens
+ */
 
 @media (min-width: 1366px) {
 	#dossiers {
@@ -671,15 +712,17 @@ textarea {
 }
 
 @media (max-width: 720px) {
+	/* Afiche la liste des synthèses en colonne */
 	#dossiers {
-		grid-template-areas: "a"
-							 "b"
-							 "c"
-							 "d"
-							 "e";
+		grid-template-areas: "cedric"
+							 "rashmi"
+							 "byzid"
+							 "brahim"
+							 "synthese";
 		padding: 20px 0;
 	}
 
+	/* Décale la page vers le bas lorsque le menu de navigation est ouvert */
 	.offset {
 		padding-top: 50px !important;
 	}
@@ -694,6 +737,9 @@ textarea {
 }
 
 @media (max-width: 600px) {
+	/*
+	 * Menu de navigation adapté aux mobiles.
+	 */
 	.burger {
 		position: absolute;
 		top: 10px;
@@ -712,6 +758,7 @@ textarea {
 		background: #01647d;
 	}
 
+	/* Petite animation */
 	.burger.close {
 		transform: rotate(360deg);
 	}
@@ -728,10 +775,12 @@ textarea {
 		opacity: 0;
 	}
 
+	/* Par défaut le menu de navigation n'est pas visible */
 	nav {
 		display: none;
 	}
 
+	/* On l'affiche en position absolue sous le header */
 	.show {
 		display: flex;
 		position: absolute;
@@ -757,10 +806,11 @@ textarea {
 		background: #f0f0f0;
 	}
 
+	/* Ajustement de la présentation de la page d'accueil en colonne */
 	#landing-page {
-		grid-template-areas: "a"
-							 "b"
-							 "c";
+		grid-template-areas: "image"
+							 "carousel"
+							 "pb";
 	}
 
 	.sources__liste {
@@ -773,6 +823,7 @@ textarea {
 }
 
 @media (max-width: 500px) {
+	/* Les liens des réseaux sociaux sont déplacés au centre du footer */
 	#social {
 		right: unset;
 		bottom: 5px;
@@ -780,6 +831,7 @@ textarea {
 }
 
 @media (max-width: 360px) {
+	/* Ajustements mineurs pour les plus petits écrans */
 	#landing-page {
 		padding: 5px;
 		margin: 0;
